@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KORA SPORT</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#080b10;color:white;font-family:Arial,sans-serif}
+header{background:#111722;padding:22px 16px;border-bottom:2px solid #d6aa35}
+.logo{font-size:28px;font-weight:bold;color:#e5b83d}
+.logo span{color:white}
+nav{display:flex;justify-content:space-around;padding:15px 5px;background:#151c28}
+nav a{color:#e5b83d;text-decoration:none;font-size:14px}
+.hero{padding:25px 18px;background:linear-gradient(120deg,#29200c,#101722)}
+h1,h2{color:#e5b83d}
+.section{padding:18px}
+.card{background:#151c28;border:1px solid #343b45;border-radius:12px;padding:16px;margin:12px 0}
+.match{display:flex;justify-content:space-between;align-items:center;text-align:center}
+.team{width:35%;font-weight:bold}
+.score{color:#e5b83d;font-size:23px;font-weight:bold}
+.tag{color:#e5b83d;font-size:12px}
+button,select{background:#d6aa35;color:#080b10;border:0;padding:12px;border-radius:8px;font-weight:bold}
+select{margin-top:12px}
+footer{text-align:center;padding:25px;color:#aaa;border-top:1px solid #333}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">⚽ KORA <span>SPORT</span></div>
+<select id="lang" onchange="changeLang()">
+<option value="ar">العربية</option>
+<option value="en">English</option>
+<option value="fr">Français</option>
+<option value="es">Español</option>
+<option value="pt">Português</option>
+<option value="de">Deutsch</option>
+<option value="it">Italiano</option>
+<option value="tr">Türkçe</option>
+<option value="nl">Nederlands</option>
+<option value="ru">Русский</option>
+<option value="zh">中文</option>
+</select>
+</header>
+<nav>
+<a href="#matches" id="nav1">المباريات</a>
+<a href="#news" id="nav2">الأخبار</a>
+<a href="#leagues" id="nav3">البطولات</a>
+</nav>
+<div class="hero">
+<h1 id="welcome">عالم كرة القدم بين يديك</h1>
+<p id="desc">تابع المباريات والنتائج وأخبار نجوم كرة القدم.</p>
+</div>
+<section class="section" id="matches">
+<h2 id="matchesTitle">⚽ المباريات</h2>
+<div class="card">
+<div class="tag" id="status">مباراة تجريبية</div>
+<div class="match">
+<div class="team">ريال مدريد</div>
+<div class="score">2 - 1</div>
+<div class="team">برشلونة</div>
+</div>
+</div>
+<div class="card">
+<div class="tag">Demo</div>
+<div class="match">
+<div class="team">مانشستر سيتي</div>
+<div class="score">1 - 1</div>
+<div class="team">ليفربول</div>
+</div>
+</div>
+</section>
+<section class="section" id="news">
+<h2 id="newsTitle">📰 أخبار كرة القدم</h2>
+<div class="card">
+<h3 id="news1">آخر أخبار نجوم كرة القدم</h3>
+<p id="newsDesc">تابع أخبار الأندية واللاعبين والانتقالات.</p>
+</div>
+</section>
+<section class="section" id="leagues">
+<h2 id="leagueTitle">🏆 أشهر البطولات</h2>
+<div class="card">دوري أبطال أوروبا</div>
+<div class="card">الدوري الإسباني</div>
+<div class="card">الدوري الإنجليزي</div>
+<div class="card">الدوري الفرنسي</div>
+</section>
+<footer>
+<div class="logo">KORA SPORT</div>
+<p>© 2026 KORA SPORT</p>
+<p id="footerText">عالم كرة القدم بين يديك</p>
+</footer>
+<script>
+const words={
+ar:["المباريات","الأخبار","البطولات","عالم كرة القدم بين يديك","تابع المباريات والنتائج وأخبار نجوم كرة القدم.","⚽ المباريات","مباراة تجريبية","📰 أخبار كرة القدم","آخر أخبار نجوم كرة القدم","تابع أخبار الأندية واللاعبين والانتقالات.","🏆 أشهر البطولات","عالم كرة القدم بين يديك"],
+en:["Matches","News","Leagues","Football at your fingertips","Follow matches, results and football news.","⚽ Matches","Demo match","📰 Football News","Latest football news","Follow clubs, players and transfers.","🏆 Top Leagues","Football at your fingertips"],
+fr:["Matchs","Actualités","Ligues","Le football à portée de main","Suivez les matchs, résultats et actualités.","⚽ Matchs","Match démo","📰 Actualités","Dernières nouvelles du football","Clubs, joueurs et transferts.","🏆 Grandes ligues","Le football à portée de main"],
+es:["Partidos","Noticias","Ligas","El fútbol en tus manos","Sigue partidos, resultados y noticias.","⚽ Partidos","Partido de prueba","📰 Noticias","Últimas noticias del fútbol","Clubes, jugadores y fichajes.","🏆 Grandes ligas","El fútbol en tus manos"],
+pt:["Jogos","Notícias","Ligas","Futebol na sua mão","Acompanhe jogos, resultados e notícias.","⚽ Jogos","Jogo de demonstração","📰 Notícias","Últimas notícias do futebol","Clubes, jogadores e transferências.","🏆 Grandes ligas","Futebol na sua mão"],
+de:["Spiele","Nachrichten","Ligen","Fußball in deiner Hand","Verfolge Spiele, Ergebnisse und Nachrichten.","⚽ Spiele","Testspiel","📰 Fußballnachrichten","Neueste Fußballnachrichten","Vereine, Spieler und Transfers.","🏆 Top-Ligen","Fußball in deiner Hand"],
+it:["Partite","Notizie","Campionati","Il calcio nelle tue mani","Segui partite, risultati e notizie.","⚽ Partite","Partita demo","📰 Notizie","Ultime notizie sul calcio","Club, giocatori e trasferimenti.","🏆 Campionati","Il calcio nelle tue mani"],
+tr:["Maçlar","Haberler","Ligler","Futbol parmaklarının ucunda","Maçları, sonuçları ve haberleri takip et.","⚽ Maçlar","Deneme maçı","📰 Futbol Haberleri","Son futbol haberleri","Kulüpler, oyuncular ve transferler.","🏆 Büyük Ligler","Futbol parmaklarının ucunda"],
+nl:["Wedstrijden","Nieuws","Competities","Voetbal binnen handbereik","Volg wedstrijden, uitslagen en nieuws.","⚽ Wedstrijden","Demowedstrijd","📰 Voetbalnieuws","Laatste voetbalnieuws","Clubs, spelers en transfers.","🏆 Topcompetities","Voetbal binnen handbereik"],
+ru:["Матчи","Новости","Лиги","Футбол у вас под рукой","Следите за матчами и новостями.","⚽ Матчи","Демо-матч","📰 Новости футбола","Последние новости футбола","Клубы, игроки и трансферы.","🏆 Главные лиги","Футбол у вас под рукой"],
+zh:["比赛","新闻","联赛","足球尽在掌握","关注比赛、比分和足球新闻。","⚽ 比赛","演示比赛","📰 足球新闻","最新足球新闻","关注俱乐部、球员和转会。","🏆 主要联赛","足球尽在掌握"]
+};
+function changeLang(){
+let l=document.getElementById("lang").value;
+let w=words[l];
+document.documentElement.lang=l;
+document.documentElement.dir=l==="ar"?"rtl":"ltr";
+["nav1","nav2","nav3","welcome","desc","matchesTitle","status","newsTitle","news1","newsDesc","leagueTitle","footerText"].forEach((id,i)=>document.getElementById(id).textContent=w[i]);
+}
+</script>
+</body>
+</html>
